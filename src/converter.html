@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="em.late.es - Emulation in Javascript">
+  <meta name="author" content="Steven Goodwin - Marquis de Geek">
+
+    <title>The Emulator Framework - EMF</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/emulates-template.css" rel="stylesheet">
+
+    <script type="text/javascript" src="//sgxengine.com/code/lib/js/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="//sgxengine.com/code/jpjs/jquery.jplayer.min.js"></script>
+	<script type='text/javascript' src='//sgxengine.com/code/sgx/sgx-3.1.15.min.js'></script>
+
+    <!-- EMF library -->
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"> 
+                    <a class="nav-link" href="/index.php">[The Emulation Framework]</a>
+                </li>
+
+                <li class="nav-item"> 
+                    <a class="nav-link" href="#" onclick="menuAbout();">[About]<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <!-- INCLUDE:HEADER -->
+
+    <link rel="stylesheet" type="text/css" href="css/emf_main.css">
+    <link rel="stylesheet" type="text/css" href="css/emf_font.css">
+
+    <script type="text/javascript" src="//sgxengine.com/code/lib/js/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//sgxengine.com/code/jpjs/jquery.jplayer.min.js"></script>
+    <script type='text/javascript' src='//sgxengine.com/code/sgx/sgx-3.1.15.min.js'></script>
+
+    <script type="text/javascript" src="js/emf/emf.js"></script>
+<script type="text/javascript" src="js/emf/audio.js"></script>
+<script type="text/javascript" src="js/emf/assembler.js"></script>
+<script type="text/javascript" src="js/emf/bus.js"></script>
+<script type="text/javascript" src="js/emf/comparator.js"></script>
+<script type="text/javascript" src="js/emf/controller.js"></script>
+<script type="text/javascript" src="js/emf/debugger.js"></script>
+<script type="text/javascript" src="js/emf/device_paper_tape.js"></script>
+<script type="text/javascript" src="js/emf/device_teleprinter.js"></script>
+<script type="text/javascript" src="js/emf/dragdrop.js"></script>
+<script type="text/javascript" src="js/emf/eaas.js"></script>
+<script type="text/javascript" src="js/emf/exporter.js"></script>
+<script type="text/javascript" src="js/emf/framework.js"></script>
+<script type="text/javascript" src="js/emf/importer.js"></script>
+<script type="text/javascript" src="js/emf/input.js"></script>
+<script type="text/javascript" src="js/emf/maths.js"></script>
+<script type="text/javascript" src="js/emf/memory.js"></script>
+<script type="text/javascript" src="js/emf/number.js"></script>
+<script type="text/javascript" src="js/emf/saveas.js"></script>
+<script type="text/javascript" src="js/emf/scripting.js"></script>
+<script type="text/javascript" src="js/emf/ui.js"></script>
+<script type="text/javascript" src="js/emf/utils.js"></script><script type="text/javascript" src="js/zx80/clock_cpu.js"></script>
+<script type="text/javascript" src="js/zx80/clock_timer.js"></script>
+<script type="text/javascript" src="js/zx80/clock_vsync.js"></script>
+<script type="text/javascript" src="js/zx80/display.js"></script>
+<script type="text/javascript" src="js/zx80/iorq.js"></script>
+<script type="text/javascript" src="js/zx80/keyboard.js"></script>
+<script type="text/javascript" src="js/zx80/memory.js"></script>
+<script type="text/javascript" src="js/zx80/ula.js"></script>
+<script type="text/javascript" src="js/zx80/zx80-0.2.js"></script>
+<script type="text/javascript" src="js/zx80/zx80-0.3.js"></script>
+<script type="text/javascript" src="js/zx80/zx80.js"></script>
+<script type="text/javascript" src="js/zx80/zx80_z80_assembler.js"></script>
+<script type="text/javascript" src="js/zx80/zx80_z80_disassembler.js"></script>
+<script type="text/javascript" src="js/zx80/zx80_z80_emulator.js"></script>
+<script type="text/javascript" src="js/zx80/zx80_z80_info.js"></script>
+<script type="text/javascript" src="js/zx80/zx81-0.3.js"></script>
+
+    <script type="text/javascript" src="emf-2.0.min.js"></script>
+    <script type="text/javascript" src="emulator-2.0.min.js"></script>
+    <script type="text/javascript" src="converter.js"></script>
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="menuAboutModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">About</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This emulator was built using the EMF system, designed and implemented by Steven Goodwin, between 2011 and 2020.
+                    </p>
+                    <p>
+                        First, the machine is defined with a custom description language. Each component part, along with its interactives, it's explained in a human-friendly, and machine-readable, format.
+                    </p>
+                    <p>
+                        Then, this description is processed to generate an emulator, assembler, and dissembler for the machine in question. This can be in any language, but is currently targetted to JavaScript.
+                    </p>
+                    <p>
+                        Finally, these files are glued into the JavaScript EMF framework, which handles the UI-specific components.
+                    </p>
+                   <!-- INCLUDE:COPYRIGHT -->
+                    <p>
+                      EMF is Copyright by Steven Goodwin, 2011-2020. All rights reserved.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="workarea">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-12">
+                 <div class="card text-center">
+                    <div class="card-body" id="dragdrop">
+                      Drag and drop files here to convert them...
+                    </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="row">
+            <div id="disassembly_div" class="card col-6 col-md-5 ">
+                <div id="emf_memory_source" class="emf_disassembly card-body scrollable"></div>
+            </div>
+            <div class="card col-6 col-md-7 ">
+                <div id="emf_memory_dest" class="emf_memory card-body scrollable"></div>
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="emf_convert_to_ecma6" autocomplete="off" checked>JavaScript</label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="emf_convert_to_c99" autocomplete="off">C/C++</label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="emf_convert_to_hex" autocomplete="off">Intel HEX</label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="emf_convert_to_hexjson" autocomplete="off">HEX.JSON</label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="emf_convert_to_hexstring" autocomplete="off">Hex string</label>
+
+                </div>
+
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+
+<div id="sgxAudio"></div>
+<canvas id="SGXCanvas" width="1" height="1">
+This browser does not support the HTML5 Canvas.
+</canvas>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
